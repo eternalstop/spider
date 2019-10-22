@@ -1,5 +1,5 @@
-from .crawl import Crawler
-from .pool import RedisClient
+from crawl import Crawler
+from pool import RedisClient
 
 
 class GetProxy:
@@ -21,5 +21,5 @@ class GetProxy:
             for proxy in proxies:
                 self.redis.add(proxy)
             count += len(proxies)
-        print("此次爬取的代理数量为：{}".format(count))
-        print("[INFO]Crawl End...\n\n")
+        # print("此次爬取的代理数量为：{}".format(count))
+        # print("[INFO]Crawl End...\n\n")

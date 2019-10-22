@@ -6,6 +6,7 @@
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
+from pool import RedisClient
 
 
 class Music163SpiderMiddleware(object):
@@ -101,3 +102,10 @@ class Music163DownloaderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+
+class HttpProxyMiddleware(object):
+
+    def process_request(self, request, spider):
+        ip = RedisClient().random()
+        request.meta['proxy'] = ip

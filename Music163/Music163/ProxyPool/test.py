@@ -2,8 +2,8 @@ import time
 import random
 import aiohttp
 import asyncio
-from .crawl import Crawler
-from .pool import RedisClient
+from crawl import Crawler
+from pool import RedisClient
 
 
 async def request(session, proxy):

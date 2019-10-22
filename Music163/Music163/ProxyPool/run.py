@@ -1,6 +1,6 @@
-from .pool import RedisClient
-from .get import GetProxy
-from .test import TestProxy
+from pool import RedisClient
+from get import GetProxy
+from test import TestProxy
 
 
 class Main:

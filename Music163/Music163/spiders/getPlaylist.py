@@ -37,7 +37,7 @@ def getProxyPool():
 				contents.append(tmpdict)
 		except:
 			continue
-		time.sleep(3)
+		time.sleep(1)
 	return contents
 
 

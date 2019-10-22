@@ -14,6 +14,7 @@ class Music163Spider(scrapy.Spider):
             item = Music163Item()
             # extract方法将xpath对象转换为Unicode字符串
             item['name'] = node.xpath("./a/text()")[0].extract()
-            item['song_id'] = node.xpath("./a/@href")[0].extract().split("=")[1]
+            song_url = node.xpath("./a/@href")[0].extract()
+            item['song_id'] = song_url.split("=")[1]
             # 返回每个提取到的Item数据，并交由pipline，pipline处理完之后再返回for循环
             yield item

@@ -10,7 +10,15 @@ import scrapy
 
 class Music163Item(scrapy.Item):
     # define the fields for your item here like:
-    name = scrapy.Field()
     song_id = scrapy.Field()
+    name = scrapy.Field()
+    time = scrapy.Field()
+    singer = scrapy.Field()
+    album = scrapy.Field()
+    composer = scrapy.Field()
+    writer = scrapy.Field()
+    lyric = scrapy.Field()
+    flag = scrapy.Field()
+
 
 

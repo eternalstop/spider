@@ -47,7 +47,7 @@ class RedisClient:
             if len(result):
                 return random.choice(result)
             else:
-                print("代理池已空！")
+                return "null"
 
     def decrease(self, proxy):
         """

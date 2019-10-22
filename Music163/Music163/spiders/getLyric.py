@@ -81,18 +81,20 @@ def getLyric(song_id):
 	datas = encrypt(querys)
 	
 	r = requests.post(url, data=datas, headers=headers)
-	result_dic = r.json()
+	result_dic = json.loads(r.text)
+	print(result_dic)
 	if "nolyric" in result_dic.keys():
 		if result_dic['nolyric']:
 			return "Nolyric"
 	else:
 		source_list = [i for i in result_dic['lrc']['lyric'].split("\n") if i != '']
-		lyric_list = [words.split("]")[1].strip() for words in source_list]
+		lyric_list = [words.split("]")[1].strip().replace('\xa0', ' ') for words in source_list]
 		return lyric_list
 
 
 if __name__ == '__main__':
-	music_id = '92939'
+	# music_id = '5183690'
+	music_id = '1363948882'
 	print(getLyric(music_id))
 
 

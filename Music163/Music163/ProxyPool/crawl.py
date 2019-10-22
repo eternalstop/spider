@@ -19,9 +19,9 @@ class CrawlMetaClass(type):
 class Crawler(object, metaclass=CrawlMetaClass):
     def __init__(self):
         self.proxies = []  # 代理列表
-        ua = UserAgent()  # 使用随机UA
+        ua = UserAgent() # 使用随机UA
         self.headers = {
-            "UserAgent": ua.random
+            "UserAgent": ua.random()
         }
 
     def get_proxies(self, callback):
