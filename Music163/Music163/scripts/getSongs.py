@@ -14,8 +14,7 @@ def get_content(playlist):
 		'Referer': 'http://music.163.com/',
 		'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
 	}
-	req = requests.session()
-	res = BeautifulSoup(req.get(playlist, headers=headers).content, "html.parser")
+	res = BeautifulSoup(requests.get(playlist, headers=headers).content, "html.parser")
 	music_dict = {}
 	label_list = []
 	song_result = res.find('ul', {'class': 'f-hide'}).find_all('a')

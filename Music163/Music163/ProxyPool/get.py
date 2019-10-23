@@ -1,5 +1,5 @@
-from crawl import Crawler
-from pool import RedisClient
+from .crawl import Crawler
+from .pool import RedisClient
 
 
 class GetProxy:
@@ -12,7 +12,7 @@ class GetProxy:
         运行爬虫爬取代理
         :return:
         """
-        print("[INFO]Crawl Start...")
+        # print("[INFO]Crawl Start...")
         count = 0
         for callback_label in range(self.crawler.__CrawlFuncCount__):
             callback = self.crawler.__CrawlFunc__[callback_label]

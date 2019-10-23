@@ -9,10 +9,11 @@ import json
 
 class Music163Pipeline(object):
 	def __init__(self):
-		self.f = open("songtest.json", "w")
+		self.f = open("test.csv", "a+")
 	
 	def process_item(self, item, spider):
-		self.f.write(json.dumps(dict(item), ensure_ascii=False))
+		playlist_info = '{},{},{},{}'.format(item['name'], item['tags'], item['plays'], item['collections'])
+		self.f.write(playlist_info + '\n')
 		return item
 
 	def close_spider(self, spider):
