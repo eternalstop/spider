@@ -31,7 +31,7 @@ class Crawler(object, metaclass=CrawlMetaClass):
         :return:
         """
         for proxy in eval("self.{}()".format(callback)):
-            print("成功获取代理：", proxy)
+            # print("成功获取代理：", proxy)
             self.proxies.append(proxy)
         return self.proxies
 
@@ -50,7 +50,8 @@ class Crawler(object, metaclass=CrawlMetaClass):
                 for ip, port in zip(ip_list, port_list):
                     yield ip + ":" + port
             except Exception as e:
-                print(e)
+                # print(e)
+                pass
 
     def crawl_89ip(self):
         """
@@ -69,7 +70,8 @@ class Crawler(object, metaclass=CrawlMetaClass):
                 for ip, port in zip(ip_list, port_list):
                     yield ip + ":" + port
             except Exception as e:
-                print(e)
+                # print(e)
+                pass
 
     def crawl_xc(self):
         """
@@ -85,4 +87,5 @@ class Crawler(object, metaclass=CrawlMetaClass):
             for ip, port in zip(ip_list, port_list):
                 yield ip + ":" + port
         except Exception as e:
-            print(e)
+            pass
+            # print(e)

@@ -1,5 +1,5 @@
-from .pool import RedisClient
-from .get import GetProxy
+from Music163.ProxyPool.pool import RedisClient
+from Music163.ProxyPool.get import GetProxy
 import requests
 
 
@@ -23,7 +23,7 @@ class Main:
                 continue
             proxy = {'http': str(self.proxy, 'utf-8')}
             try:
-                r = requests.get(url="https://music.163.com/", proxies=proxy, timeout=1)
+                r = requests.get(url="https://www.baidu.com/", proxies=proxy, timeout=1)
                 self.status = r.status_code
             except:
                 self.db.delete(self.proxy)
@@ -37,7 +37,7 @@ class Main:
                 self.proxy = self.db.random()
                 continue
 
-#
-# if __name__ == '__main__':
-#     m = Main()
-#     print(m.run())
+
+if __name__ == '__main__':
+    m = Main()
+    print(m.run())
