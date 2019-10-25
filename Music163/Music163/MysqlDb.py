@@ -10,14 +10,14 @@ import os
 
 
 config = configparser.ConfigParser()
-file = os.path.split(os.path.realpath(__file__))[0] + r'\config'
+file = os.path.dirname(os.path.realpath(__file__)) + "\\config.ini"
 config.read(file)
-DBHOST = config.get("database", "host")
-DBPORT = int(config.get("database", "port"))
-DBNAME = config.get("database", "name")
-DBUSER = config.get("database", "user")
-DBPWD = config.get("database", "password")
-DBCHAR = config.get("database", "charset")
+DBHOST = config.get("mysql", "host")
+DBPORT = int(config.get("mysql", "port"))
+DBNAME = config.get("mysql", "name")
+DBUSER = config.get("mysql", "user")
+DBPWD = config.get("mysql", "password")
+DBCHAR = config.get("mysql", "charset")
 
 
 class DataBase:
@@ -56,7 +56,18 @@ class DataBase:
 			except:
 				s_results = False
 		return s_results
-	
+
+	def insert(self, sql):
+		i_results = False
+		if self._dbconn:
+			try:
+				self._dbcursor.execute(sql)
+				self._dbconn.commit()
+				i_results = True
+			except:
+				i_results = False
+		return i_results
+
 	def update(self, sql):
 		u_results = False
 		if self._dbconn:

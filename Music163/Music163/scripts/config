@@ -1,6 +1,0 @@
-port="localhost"
-host=3306
-name="music163"
-user="root"
-password="Missy@u777"
-charset="utf8"

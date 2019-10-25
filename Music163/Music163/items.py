@@ -15,6 +15,7 @@ class Music163Item(scrapy.Item):
     tags = scrapy.Field()
     collections = scrapy.Field()
     url = scrapy.Field()
+    sql = scrapy.Field()
 
 
 
