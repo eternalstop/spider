@@ -95,8 +95,7 @@ def listDb(name, url, hot, label):
 	# connect mysql
 	# db = pymysql.connect(host="localhost", user="root", passwd="lucky", db="music163",
 	#                      charset="utf8")
-	db = pymysql.connect(host="10.102.27.125", user="music", passwd="tysx@tv189", db="music163",
-	                     charset="utf8")
+	db = pymysql.connect(host="10.102.27.125", user="music", passwd="tysx@tv189", db="music163", charset="utf8")
 	# get cursor by cursor()
 	cursor = db.cursor()
 	# SQL command

@@ -1,17 +1,20 @@
-import pymysql
-from Music163.MysqlDb import DataBase
+class TestClass:
+	# def __init__(self):
+	# 	print("测试类")
 
-#
-# test_list = [[1, 'a'], [2, 'b'], [3, 'c'], [4, 'd'], [5, 'e']]
-# sql_pre = "insert into sing (songId, name) values "
-# insert_list = []
-# for node in test_list:
-# 	insert_list.append(''.join('("{}", "{}")'.format(node[0], node[1])))
-#
-# insert_sql = sql_pre + ','.join(insert_list)
-# db = DataBase()
-# result = db.insert(insert_sql)
-# db.closeDb()
-#
-# print(result)
-print('\\"')
+	def method1(self):
+		return "method1"
+
+	def method2(self):
+		return "method2"
+
+	def method3(self):
+		return "method3"
+
+
+instance_class = TestClass()
+
+for test_method in ['method1', 'method2', 'method3']:
+	# print(test_method)
+	# print(getattr(instance_class, test_method))
+	print(instance_class.__dict__.get(test_method))
