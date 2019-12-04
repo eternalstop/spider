@@ -11,4 +11,6 @@ import scrapy
 class BiqugeItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    name = scrapy.Field()
+    eve_title = scrapy.Field()
+    eve_content = scrapy.Field()
